@@ -93,7 +93,8 @@ class WheelMenu extends Component
 		_items = new Array<Dynamic>();
 		makeButtons();
 		
-		filters = [new DropShadowFilter(4, 45, 0, 1, 4, 4, .2, 4)];
+		//filters = [new DropShadowFilter(4, 45, 0, 1, 4, 4, .2, 4)];
+		filters = [];
 	}
 	
 	/**

@@ -76,6 +76,10 @@ class Panel extends Component
 	override private function addChildren():Void
 	{
 		_background = new Sprite();
+		_background.graphics.beginFill(0xCCCCCC);
+		_background.graphics.drawRect(0,0,100,100);
+		_background.graphics.endFill();
+		
 		super.addChild(_background);
 		
 		_mask = new Sprite();
@@ -86,12 +90,13 @@ class Panel extends Component
 		super.addChild(content);
 		content.mask = _mask;
 		#if flash
-		filters = [getShadow(2, true)];
+		if (Style.BUsedFilters == false) {
+			filters = [];
+		}else{
+			filters = [getShadow(2, true)];
+		}
 		#end
 	}
-	
-	
-	
 	
 	///////////////////////////////////
 	// public methods
@@ -123,6 +128,7 @@ class Panel extends Component
 		super.draw();
 		_background.graphics.clear();
 		_background.graphics.lineStyle(1, 0, 0.1);
+		
 		if(_color == -1)
 		{
 			_background.graphics.beginFill(Style.PANEL);
@@ -131,6 +137,7 @@ class Panel extends Component
 		{
 			_background.graphics.beginFill(_color);
 		}
+		
 		_background.graphics.drawRect(0, 0, _width, _height);
 		_background.graphics.endFill();
 		
@@ -139,6 +146,9 @@ class Panel extends Component
 		_mask.graphics.clear();
 		_mask.graphics.beginFill(0xff0000);
 		_mask.graphics.drawRect(0, 0, _width, _height);
+		_mask.graphics.endFill();
+		
+		
 		_mask.graphics.endFill();
 	}
 	
@@ -186,7 +196,11 @@ class Panel extends Component
 		#if flash
 		if(_shadow)
 		{
-			filters = [getShadow(2, true)];
+			if (Style.BUsedFilters == false ) {
+				filters = [];
+			}else{
+				filters = [getShadow(2, true)];
+			}
 		}
 		else
 		{

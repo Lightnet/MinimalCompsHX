@@ -181,7 +181,11 @@ class PushButton extends Component
 		if(!_down)
 		{
 			#if flash
-			_face.filters = [getShadow(1)];
+			if(Style.BUsedFilters == false){
+				_face.filters = [];
+			}else {
+				_face.filters = [getShadow(1)];
+			}
 			#end
 		}
 		removeEventListener(MouseEvent.ROLL_OUT, onMouseOut);
@@ -214,13 +218,14 @@ class PushButton extends Component
 		_down = _selected;
 		drawFace();
 		#if flash
-		_face.filters = [getShadow(1, _selected)];
+		if(Style.BUsedFilters == false){
+			_face.filters = [];	
+		}else {
+			_face.filters = [getShadow(1, _selected)];
+		}
 		#end
 		stage.removeEventListener(MouseEvent.MOUSE_UP, onMouseGoUp);
 	}
-	
-	
-	
 	
 	///////////////////////////////////
 	// getter/setters

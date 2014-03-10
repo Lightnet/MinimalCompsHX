@@ -34,6 +34,9 @@ import flash.text.Font;
 
 class Style
 {
+	public static var BUsedFilters:Bool = false; //UDK false by default can't be used.
+	
+	
 	public static var TEXT_BACKGROUND:Int = 0xFFFFFF;
 	public static var BACKGROUND:Int = 0xCCCCCC;
 	public static var BUTTON_FACE:Int = 0xFFFFFF;

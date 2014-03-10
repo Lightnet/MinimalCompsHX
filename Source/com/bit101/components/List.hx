@@ -120,12 +120,14 @@ class List extends Component
 		for(i in 0...(numItems))
 		{
 			item = Type.createInstance(_listItemClass, [_itemHolder, 0, i * _listItemHeight]);
+			//item = new ListItem(_itemHolder, 0, i * _listItemHeight);
 			item.setSize(width, _listItemHeight);
 			item.defaultColor = _defaultColor;
 
 			item.selectedColor = _selectedColor;
 			item.rolloverColor = _rolloverColor;
 			item.addEventListener(MouseEvent.CLICK, onSelect);
+			//trace(i);
 		}
 	}
 

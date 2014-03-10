@@ -125,7 +125,11 @@ class Window extends Component
 		_closeButton = new PushButton(null, 86, 6, "", onClose);
 		_closeButton.setSize(8, 8);
 		#if flash
-		filters = [getShadow(4, false)];
+		if (Style.BUsedFilters ==  false ) {
+			filters = [];
+		}else {
+			filters = [getShadow(4, false)];
+		}
 		#end
 	}
 	
@@ -231,7 +235,11 @@ class Window extends Component
 		#if flash
 		if(_shadow)
 		{
-			filters = [getShadow(4, false)];
+			if (Style.BUsedFilters == false) {
+				filters = [];
+			}else {
+				filters = [getShadow(4, false)];
+			}
 		}
 		else
 		{

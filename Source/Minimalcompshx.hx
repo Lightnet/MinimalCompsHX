@@ -8,7 +8,7 @@ import com.bit101.charts.PieChart;
 import com.bit101.components.Accordion;
 import com.bit101.components.Calendar;
 import com.bit101.components.CheckBox;
-import com.bit101.components.ColorChooser;
+//import com.bit101.components.ColorChooser;
 import com.bit101.components.ComboBox;
 import com.bit101.components.Component;
 import com.bit101.components.FPSMeter;
@@ -16,7 +16,7 @@ import com.bit101.components.HBox;
 import com.bit101.components.HRangeSlider;
 import com.bit101.components.HSlider;
 import com.bit101.components.HUISlider;
-import com.bit101.components.IndicatorLight;
+//import com.bit101.components.IndicatorLight;
 import com.bit101.components.InputText;
 import com.bit101.components.Knob;
 import com.bit101.components.Label;
@@ -66,11 +66,16 @@ class Minimalcompshx extends Sprite {
 		
 		super ();
 		
-		Lib.current.stage.frameRate = 60;
+		//Lib.current.stage.frameRate = 60;
 		
 		initialize ();
 		
 		Style.setStyle(Style.LIGHT);
+		
+		//UDK 
+		// You need to set to false else it will not show or not well render.
+		Style.BUsedFilters = false;
+		
 		
 		var container:Sprite = new Sprite();
 		addChild(container);
@@ -96,8 +101,8 @@ class Minimalcompshx extends Sprite {
 		var check:CheckBox = new CheckBox(container, 10, 180, "CheckBox");
 		check.selected = true;
 		
-		var indicator = new IndicatorLight(container, 20 + check.width, 180, 0xff0000, "indicator");
-		indicator.flash();
+		//var indicator = new IndicatorLight(container, 20 + check.width, 180, 0xff0000, "indicator");
+		//indicator.flash();
 		
 		var meter:Meter = new Meter(panel, 10 + text.width, 20);
 		meter.value = 0.65;
@@ -163,8 +168,8 @@ class Minimalcompshx extends Sprite {
 		
 		var textArea:TextArea = new TextArea(container, comboBox.x, comboBox.y + comboBox.height + 20);
 		
-		var colorChooser:ColorChooser = new ColorChooser(container, 10, textArea.y + textArea.height + 20);
-		colorChooser.usePopup = true;
+		//var colorChooser:ColorChooser = new ColorChooser(container, 10, textArea.y + textArea.height + 20);
+		//colorChooser.usePopup = true;
 		
 		var knob:Knob = new Knob(container, list.x, lineChart.y);
 		
@@ -219,6 +224,33 @@ class Minimalcompshx extends Sprite {
 		list2.setSize(list2.width, 120);
 		#end*/
 		//list2.autoHeight = true;
+		
+		
+		// creating a new shape instance
+		var circle:Sprite = new Sprite(); 
+		// starting color filling
+		circle.graphics.beginFill( 0xff9933 , 1 );
+		// drawing circle 
+		circle.graphics.drawCircle( 0 , 0 , 5 );
+		// repositioning shape
+		circle.x = 80;
+		circle.y = 80;
+
+		// adding displayobject to the display list
+		addChild( circle );
+		//Lib.current.addChild( circle );
+		
+		
+		
+		function onMouseMove(event:flash.events.MouseEvent)
+		{
+			//mc.graphics.drawCircle(mc.stage.mouseX - mc.stage.stageWidth / 2.0, mc.stage.mouseY - mc.stage.stageHeight / 2.0, mc.stage.stageWidth / 200.0);
+			circle.x = stage.mouseX + 12;
+			circle.y = stage.mouseY;
+		}
+		
+		//this.addEventListener(flash.events.MouseEvent.MOUSE_MOVE, onMouseMove);
+		Lib.current.addEventListener(flash.events.MouseEvent.MOUSE_MOVE, onMouseMove);
 	}
 	
 	public function onWheelFeelerClick(e:MouseEvent):Void 
@@ -238,7 +270,7 @@ class Minimalcompshx extends Sprite {
 	
 	public function onClick(e:MouseEvent):Void 
 	{
-		trace("click");
+		//trace("click");
 	}
 	
 	private function initialize():Void {
@@ -256,7 +288,7 @@ class Minimalcompshx extends Sprite {
 	
 	public static function main() {
 		
-		Lib.current.addChild (new Minimalcompshx ());
+		Lib.current.addChild(new Minimalcompshx());
 		
 	}
 	

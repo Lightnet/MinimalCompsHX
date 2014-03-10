@@ -1,3 +1,15 @@
+This has been fork for adjust the code a bit.
+
+
+Last up Date: 2014.03.10
+
+
+Tested some code to make the UDK scaleform. Actionscript 3 into Haxe 3 with the modified compiler.
+
+Note:
+ * Bitmapdata and Filters will not work with UDK since it UI drawing only.
+ * Image and font file mush be loaded into swf to create a lib or assets swf file to able to UDK read it and import as packages.
+
 # minimalcomps
 ### Minimal ActionScript 3.0 UI Components for Flash
 http://www.minimalcomps.com
