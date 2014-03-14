@@ -8,7 +8,8 @@ import com.bit101.charts.PieChart;
 import com.bit101.components.Accordion;
 import com.bit101.components.Calendar;
 import com.bit101.components.CheckBox;
-//import com.bit101.components.ColorChooser;
+import com.bit101.components.ColorChooser;
+import com.bit101.components.ColorScrollBar;
 import com.bit101.components.ComboBox;
 import com.bit101.components.Component;
 import com.bit101.components.FPSMeter;
@@ -16,7 +17,7 @@ import com.bit101.components.HBox;
 import com.bit101.components.HRangeSlider;
 import com.bit101.components.HSlider;
 import com.bit101.components.HUISlider;
-//import com.bit101.components.IndicatorLight;
+import com.bit101.components.IndicatorLight;
 import com.bit101.components.InputText;
 import com.bit101.components.Knob;
 import com.bit101.components.Label;
@@ -43,6 +44,7 @@ import com.bit101.components.VUISlider;
 import com.bit101.components.WheelMenu;
 import com.bit101.components.Window;
 import com.bit101.components.CheckListItem;
+
 
 import flash.display.Sprite;
 import flash.events.MouseEvent;
@@ -103,8 +105,8 @@ class Minimalcompshx extends Sprite {
 		var check:CheckBox = new CheckBox(container, 10, 180, "CheckBox");
 		check.selected = true;
 		
-		//var indicator = new IndicatorLight(container, 20 + check.width, 180, 0xff0000, "indicator");
-		//indicator.flash();
+		var indicator = new IndicatorLight(container, 20 + check.width, 180, 0xff0000, "indicator");
+		indicator.flash();
 		
 		var meter:Meter = new Meter(panel, 10 + text.width, 20);
 		meter.value = 0.65;
@@ -171,7 +173,11 @@ class Minimalcompshx extends Sprite {
 		var textArea:TextArea = new TextArea(container, comboBox.x, comboBox.y + comboBox.height + 20);
 		
 		//var colorChooser:ColorChooser = new ColorChooser(container, 10, textArea.y + textArea.height + 20);
-		//colorChooser.usePopup = true;
+		//var colorChooser:ColorChooser = new ColorChooser(container, 10, 100);
+		var colorChooser:ColorScrollBar = new ColorScrollBar(container, 10, 100);
+		colorChooser.usePopup = true;
+		
+		
 		
 		var knob:Knob = new Knob(container, list.x, lineChart.y);
 		
