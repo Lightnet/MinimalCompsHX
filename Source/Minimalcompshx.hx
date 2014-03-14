@@ -42,6 +42,7 @@ import com.bit101.components.VSlider;
 import com.bit101.components.VUISlider;
 import com.bit101.components.WheelMenu;
 import com.bit101.components.Window;
+import com.bit101.components.CheckListItem;
 
 import flash.display.Sprite;
 import flash.events.MouseEvent;
@@ -75,6 +76,7 @@ class Minimalcompshx extends Sprite {
 		//UDK 
 		// You need to set to false else it will not show or not well render.
 		Style.BUsedFilters = false;
+		//Style.BUsedFilters = true;
 		
 		
 		var container:Sprite = new Sprite();
@@ -210,6 +212,42 @@ class Minimalcompshx extends Sprite {
 		
 		var accordion:Accordion = new Accordion(container, scroll.x + scroll.width + 20, scroll.y);
 		
+		
+		var __list:List = new List(this, accordion.x + 100,scroll.y+ 10);
+		__list.listItemClass = CheckListItem;
+		
+		for (i in 1...10) {
+			__list.addItem( { label:"item " + i, checked:i % 2 == 0 } );
+		}
+		
+		
+		//var i = 0;
+		/*
+		//for(var i:int = 0; i < 20; i++)
+		//{
+			__list.addItem( { label:"item " + i, checked:i % 2 == 0 } );
+			i += 1;
+			
+			__list.addItem( { label:"item " + i, checked:i % 2 == 0 } );
+			i += 1;
+			__list.addItem( { label:"item " + i, checked:i % 2 == 0 } );
+			i += 1;
+			__list.addItem({label:"item " + i, checked:i % 2 == 0});
+		//}
+		*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		/*var tabPanel:TabPanel = new TabPanel(container, accordion.x + accordion.width + 20, accordion.y);
 		
 		var list2:List = new List(tabPanel.getTabAt(1));
@@ -251,6 +289,8 @@ class Minimalcompshx extends Sprite {
 		
 		//this.addEventListener(flash.events.MouseEvent.MOUSE_MOVE, onMouseMove);
 		Lib.current.addEventListener(flash.events.MouseEvent.MOUSE_MOVE, onMouseMove);
+		
+		
 	}
 	
 	public function onWheelFeelerClick(e:MouseEvent):Void 
@@ -279,11 +319,7 @@ class Minimalcompshx extends Sprite {
 		Lib.current.stage.scaleMode = StageScaleMode.NO_SCALE;
 		
 	}
-	
-	
 	// Entry point
-	
-	
 	
 	
 	public static function main() {

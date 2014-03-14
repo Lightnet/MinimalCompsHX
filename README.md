@@ -1,10 +1,12 @@
 This has been fork for adjust the code a bit.
 
-
 Last up Date: 2014.03.10
 
-
 Tested some code to make the UDK scaleform. Actionscript 3 into Haxe 3 with the modified compiler.
+
+Minimalcompshx.hx is the test script for UDK for few UI are not working yet for UDK UI.
+
+
 
 Note:
  * Bitmapdata and Filters will not work with UDK since it UI drawing only.

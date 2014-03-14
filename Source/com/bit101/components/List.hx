@@ -191,7 +191,6 @@ class List extends Component
 	}
 	
 	
-	
 	///////////////////////////////////
 	// public methods
 	///////////////////////////////////
@@ -288,10 +287,6 @@ class List extends Component
 		makeListItems();
 		fillItems();
 	}
-	
-	
-	
-	
 	
 	///////////////////////////////////
 	// event handlers
